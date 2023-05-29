@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()">
+	<div class="field">
+		<label class="label" for="search">Search Term</label>
+		<div class="control">
+			<input class="input" type="text" name="search" id="search" (input)="onInput($event)" />
+		</div>
+	</div>
+</form>
+{{ searchTerm }}
