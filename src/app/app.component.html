@@ -2,6 +2,8 @@
 	<div class="column is-half">
 		<app-search-bar (submitted)="onSubmit($event)"></app-search-bar>
 
-		<app-results-list></app-results-list>
+		<div class="mt-5">
+			<app-results-list [searchResults]="searchResults"></app-results-list>
+		</div>
 	</div>
 </div>

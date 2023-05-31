@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WikiSearchResult } from './wiki-search.model';
+import { WikiSearchService } from './wiki-search.service';
 
 @Component({
 	selector: 'app-root',
@@ -6,7 +8,13 @@ import { Component } from '@angular/core';
 	styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+	public searchResults: WikiSearchResult[];
+
+	public constructor(private wikiSearchService: WikiSearchService) {}
+
 	public onSubmit(value: string) {
-		console.log(value);
+		this.wikiSearchService
+			.search(value)
+			.subscribe((searchResults: WikiSearchResult[]) => (this.searchResults = searchResults));
 	}
 }
