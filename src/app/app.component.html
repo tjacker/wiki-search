@@ -2,7 +2,7 @@
 	<div class="column is-half">
 		<app-search-bar (submitted)="onSubmit($event)"></app-search-bar>
 
-		<div class="mt-5">
+		<div *ngIf="searchResults?.length" class="mt-5">
 			<app-results-list [searchResults]="searchResults"></app-results-list>
 		</div>
 	</div>
