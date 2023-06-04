@@ -9,9 +9,11 @@
 
 	<tbody>
 		<tr *ngFor="let searchResult of searchResults">
-			<td>{{ searchResult.title }}</td>
+			<td>
+				<a [href]="wikiBaseURL + searchResult.pageid" target="_blank">{{ searchResult.title }}</a>
+			</td>
 			<td>{{ searchResult.wordcount | number : '1.0-0' }}</td>
-			<td>{{ searchResult.snippet }}</td>
+			<td [innerHTML]="searchResult.snippet"></td>
 		</tr>
 	</tbody>
 </table>
